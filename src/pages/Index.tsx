@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 
 const Index = () => {
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [email, setEmail] = useState("");
   const [saveUser, setSaveUser] = useState(false);
 
   return (
@@ -19,26 +19,18 @@ const Index = () => {
       </header>
 
       <main className="content">
-        <h1 className="title">Enter phone number</h1>
+        <h1 className="title">Enter email address</h1>
         <p className="subtitle">
-          You'll use your phone number to sign in to your account
+          You'll use your email address to sign in to your account
         </p>
 
-        <div className="phone-input">
-          <div className="country-code">
-            <img
-              src="/lovable-uploads/d544bf60-8c34-443a-b1ce-c1fd6dc1cef6.png"
-              alt="Russian flag"
-              className="flag"
-            />
-            <span>+7</span>
-          </div>
+        <div className="email-input">
           <input
-            type="tel"
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
-            className="phone-number"
-            placeholder="Phone number"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="input-field"
+            placeholder="Email address"
           />
         </div>
 

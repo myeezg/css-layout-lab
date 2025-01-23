@@ -74,9 +74,7 @@ body {
   margin-bottom: 1.5rem;
 }
 
-.phone-input {
-  display: flex;
-  align-items: center;
+.email-input {
   border: 1px solid #ddd;
   border-radius: 0.5rem;
   padding: 0.75rem;
@@ -84,27 +82,12 @@ body {
   margin-bottom: 1rem;
 }
 
-.phone-input:focus-within {
+.email-input:focus-within {
   border-color: var(--vk-blue);
 }
 
-.country-code {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding-right: 0.5rem;
-  border-right: 1px solid #ddd;
-}
-
-.flag {
-  width: 1.5rem;
-  height: 1rem;
-  object-fit: cover;
-}
-
-.phone-number {
-  flex: 1;
-  margin-left: 0.5rem;
+.input-field {
+  width: 100%;
   border: none;
   outline: none;
   font-size: 1.125rem;
