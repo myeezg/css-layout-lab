@@ -43,7 +43,7 @@ const Index = () => {
             className="checkbox"
           />
           <label htmlFor="save-user" className="save-user-label">
-            Save user
+            Remember me
           </label>
           <span className="help-icon" title="Save your login information for next time">
             ?
@@ -54,7 +54,7 @@ const Index = () => {
           Continue
         </button>
         <button className="button button-secondary">
-          Sign in through app
+          Create an Account
         </button>
 
         <p className="terms">
