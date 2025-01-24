@@ -27,37 +27,55 @@ body {
   background-color: white;
   color: var(--vk-text);
 }
- .checkbox {
+    /* Container for the checkbox and label */
+    .save-user {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Checkbox styling */
+    .checkbox {
       width: 1.25rem;
       height: 1.25rem;
-      border: 2px solid var(--vk-blue, #007bff); /* Default color fallback */
-      border-radius: 50%;
+      border: 2px solid var(--vk-blue, #007bff); /* Default blue border color */
+      border-radius: 50%; /* Circular shape */
       cursor: pointer;
-      -webkit-appearance: none; /* Remove default checkbox styling (Webkit browsers) */
-      -moz-appearance: none; /* Remove default checkbox styling (Firefox) */
-      appearance: none; /* Remove default checkbox styling (Modern browsers) */
-      display: inline-block;
-      background-color: white; /* Optional background */
-    }
-    .checkbox:checked {
-      background-color: var(--vk-blue, #007bff); /* Same as border color */
-      border-color: var(--vk-blue, #007bff);
+      -webkit-appearance: none; /* Remove default checkbox styling */
+      -moz-appearance: none; /* Remove default checkbox styling */
+      appearance: none; /* Remove default checkbox styling */
+      background-color: white; /* Initial background color */
+      position: relative;
+      outline: none; /* Remove focus outline */
+      transition: background-color 0.3s, border-color 0.3s; /* Smooth transitions */
     }
 
-    /* Optional: Add a checkmark indicator */
+    /* Checked state: Show background color and white tick */
+    .checkbox:checked {
+      background-color: var(--vk-blue, #007bff); /* Highlighted background color */
+      border-color: var(--vk-blue, #007bff); /* Same as background */
+    }
+
+    /* Add a white tick mark */
     .checkbox:checked::after {
       content: '';
-      display: block;
-      width: 0.75rem;
-      height: 0.75rem;
-      background-color: white;
-      border-radius: 50%;
-      margin: auto;
-      position: relative;
+      width: 6px;
+      height: 12px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      position: absolute;
       top: 50%;
-      transform: translateY(-50%);
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg); /* Rotate to form the check */
+      display: inline-block;
     }
 
+    /* Label styling */
+    .save-user-label {
+      font-size: 1rem;
+      cursor: pointer;
+      color: #333; /* Label text color */
+    }
 .container {
   min-height: 100vh;
   display: flex;
