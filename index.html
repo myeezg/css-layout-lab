@@ -263,49 +263,30 @@ body {
       </main>
     </div>
     <script>
-    // Get the email input container and the continue button
-const container = document.querySelector('.email-input');
-const continueButton = document.querySelector('.button-primary');
+    <script>
+    const emailInputs = document.querySelectorAll('.email-input');
+    const button = document.querySelector('.button-primary');
 
-// Function to update button visibility
-function updateButtonVisibility() {
-  const emailInputs = container.querySelectorAll('.input-field');
-  // Show the button if there are 4 or more email inputs
-  if (emailInputs.length >= 4) {
-    continueButton.style.display = 'block';
-  } else {
-    continueButton.style.display = 'none';
-  }
-}
+    // Function to check if 4 email inputs are filled
+    function checkEmails() {
+      const filledEmails = Array.from(emailInputs).filter(input => input.value.trim() !== '');
+      
+      // Show the button if there are 4 filled email inputs
+      if (filledEmails.length === 4) {
+        button.style.display = 'block';
+      } else {
+        button.style.display = 'none';
+      }
+    }
 
-// Add new email input field
-function addEmailInput() {
-  const emailDiv = document.createElement('div');
-  emailDiv.classList.add('email-input');
-  emailDiv.innerHTML = `
-    <input type="email" class="input-field" placeholder="Email address">
-  `;
-  container.appendChild(emailDiv);
-  updateButtonVisibility();
-}
+    // Add event listeners to check inputs when user types
+    emailInputs.forEach(input => {
+      input.addEventListener('input', checkEmails);
+    });
 
-// Remove last email input field
-function removeEmailInput() {
-  const emailInputs = container.querySelectorAll('.email-input');
-  if (emailInputs.length > 1) {
-    container.removeChild(emailInputs[emailInputs.length - 1]);
-    updateButtonVisibility();
-  }
-}
-
-// Event listener to monitor changes in input fields
-document.querySelector('.email-input').addEventListener('input', updateButtonVisibility);
-
-// Add and remove buttons (for demonstration)
-document.body.insertAdjacentHTML('beforeend', `
-  <button onclick="addEmailInput()">Add Email Input</button>
-  <button onclick="removeEmailInput()">Remove Email Input</button>
-`);
+    // Initial check in case there are pre-filled values
+    checkEmails();
+  </script>
   </script>
     <script src="script.js"></script>
   </body>
