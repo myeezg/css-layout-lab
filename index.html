@@ -187,7 +187,6 @@ body {
 .button-primary {
   background-color: var(--vk-blue);
   color: white;
-  display: none;
 }
 .button-primary:hover {
   background-color: var(--vk-blue-hover);
@@ -262,32 +261,6 @@ body {
         </p>
       </main>
     </div>
-    <script>
-    <script>
-    const emailInputs = document.querySelectorAll('.email-input');
-    const button = document.querySelector('.button-primary');
-
-    // Function to check if 4 email inputs are filled
-    function checkEmails() {
-      const filledEmails = Array.from(emailInputs).filter(input => input.value.trim() !== '');
-      
-      // Show the button if there are 4 filled email inputs
-      if (filledEmails.length === 4) {
-        button.style.display = 'block';
-      } else {
-        button.style.display = 'none';
-      }
-    }
-
-    // Add event listeners to check inputs when user types
-    emailInputs.forEach(input => {
-      input.addEventListener('input', checkEmails);
-    });
-
-    // Initial check in case there are pre-filled values
-    checkEmails();
-  </script>
-  </script>
     <script src="script.js"></script>
   </body>
 </html>
