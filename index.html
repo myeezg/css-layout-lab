@@ -263,53 +263,49 @@ body {
       </main>
     </div>
     <script>
-    const container = document.querySelector('.email-input-container');
-    const continueButton = document.querySelector('#continue-button');
+    // Get the email input container and the continue button
+const container = document.querySelector('.email-input');
+const continueButton = document.querySelector('.button-primary');
 
-    // Function to update button visibility
-    function updateButtonVisibility() {
-      const emailInputs = container.querySelectorAll('.input-field');
-      if (emailInputs.length >= 4) {
-        continueButton.style.display = 'block';
-      } else {
-        continueButton.style.display = 'none';
-      }
-    }
+// Function to update button visibility
+function updateButtonVisibility() {
+  const emailInputs = container.querySelectorAll('.input-field');
+  // Show the button if there are 4 or more email inputs
+  if (emailInputs.length >= 4) {
+    continueButton.style.display = 'block';
+  } else {
+    continueButton.style.display = 'none';
+  }
+}
 
-    // Add new email input field
-    function addEmailInput() {
-      const emailDiv = document.createElement('div');
-      emailDiv.classList.add('email-input');
-      emailDiv.innerHTML = `
-        <input type="email" class="input-field" placeholder="Email address">
-      `;
-      container.appendChild(emailDiv);
-      updateButtonVisibility();
-    }
+// Add new email input field
+function addEmailInput() {
+  const emailDiv = document.createElement('div');
+  emailDiv.classList.add('email-input');
+  emailDiv.innerHTML = `
+    <input type="email" class="input-field" placeholder="Email address">
+  `;
+  container.appendChild(emailDiv);
+  updateButtonVisibility();
+}
 
-    // Remove last email input field
-    function removeEmailInput() {
-      const emailInputs = container.querySelectorAll('.email-input');
-      if (emailInputs.length > 1) {
-        container.removeChild(emailInputs[emailInputs.length - 1]);
-        updateButtonVisibility();
-      }
-    }
+// Remove last email input field
+function removeEmailInput() {
+  const emailInputs = container.querySelectorAll('.email-input');
+  if (emailInputs.length > 1) {
+    container.removeChild(emailInputs[emailInputs.length - 1]);
+    updateButtonVisibility();
+  }
+}
 
-    // Event listeners to monitor changes
-    document.addEventListener('keyup', (e) => {
-      const emailInputs = container.querySelectorAll('.input-field');
-      emailInputs.forEach(input => {
-        input.addEventListener('input', updateButtonVisibility);
-      });
-    });
+// Event listener to monitor changes in input fields
+document.querySelector('.email-input').addEventListener('input', updateButtonVisibility);
 
-    // For demonstration purposes:
-    // Add and remove buttons (replace these with your logic if needed)
-    document.body.insertAdjacentHTML('beforeend', `
-      <button onclick="addEmailInput()">Add Email Input</button>
-      <button onclick="removeEmailInput()">Remove Email Input</button>
-    `);
+// Add and remove buttons (for demonstration)
+document.body.insertAdjacentHTML('beforeend', `
+  <button onclick="addEmailInput()">Add Email Input</button>
+  <button onclick="removeEmailInput()">Remove Email Input</button>
+`);
   </script>
     <script src="script.js"></script>
   </body>
