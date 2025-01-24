@@ -1,10 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
   const emailInput = document.getElementById('email');
   const saveUserCheckbox = document.getElementById('save-user');
-  const continueButton = document.querySelector('.button-primary');
+  const defaultButton = document.querySelector('.button-default');
+  const primaryButton = document.querySelector('.button-primary');
   const createAccountButton = document.querySelector('.button-secondary');
 
-  continueButton.addEventListener('click', function() {
+  emailInput.addEventListener('input', function() {
+    const email = emailInput.value;
+    if (email.length >= 4) {
+      defaultButton.style.display = 'none';
+      primaryButton.style.display = 'block';
+    } else {
+      defaultButton.style.display = 'block';
+      primaryButton.style.display = 'none';
+    }
+  });
+
+  primaryButton.addEventListener('click', function() {
     const email = emailInput.value;
     const rememberMe = saveUserCheckbox.checked;
     

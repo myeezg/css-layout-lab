@@ -27,6 +27,30 @@ body {
   background-color: white;
   color: var(--vk-text);
 }
+
+    /* Add styles for the default button */
+    .button-default {
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      border-radius: 0.75rem;
+      font-size: 1.125rem;
+      font-weight: 500;
+      cursor: pointer;
+      margin-bottom: 0.75rem;
+      background-color: var(--vk-gray);
+      color: var(--vk-text);
+      display: block; /* Visible by default */
+    }
+
+    .button-primary {
+      display: none; /* Hidden by default */
+    }
+
+    .button-primary.visible {
+      display: block;
+    }
+
     /* Container for the checkbox and label */
     .save-user {
       display: flex;
@@ -250,11 +274,11 @@ body {
         <div class="save-user">
           <input type="checkbox" id="save-user" class="checkbox">
           <label for="save-user" class="save-user-label">Remember me</label>
-          <!--<span class="help-icon" title="Save your login information for next time">?</span> -->
         </div>
 
+        <div class="button-default">Continue</div>
         <button class="button button-primary">Continue</button>
-        <button class="button button-secondary">Sign in to Your Account</button>
+        <button class="button button-secondary">Create an Account</button>
 
         <p class="terms">
           By Signing up, you continue to agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
