@@ -57,18 +57,19 @@ body {
     }
 
     /* Add a white tick mark */
-    .checkbox:checked::after {
-      content: '';
-      width: 6px;
-      height: 12px;
-      border: solid white;
-      border-width: 0 2px 2px 0;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(45deg); /* Rotate to form the check */
-      display: inline-block;
-    }
+  .checkbox:checked::after {
+  content: '';
+  width: 5px; /* Reduced width for a smaller tick */
+  height: 10px; /* Reduced height for a smaller tick */
+  border: solid white; /* White tick color */
+  border-width: 0 2px 2px 0; /* Define tick thickness */
+  position: absolute;
+  top: 45%; /* Push the tick upwards */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%) rotate(45deg); /* Position and rotate for the tick */
+  display: inline-block;
+}
+
 
     /* Label styling */
     .save-user-label {
