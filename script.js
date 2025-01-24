@@ -7,7 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   emailInput.addEventListener('input', function() {
     const email = emailInput.value;
-    if (email.length >= 4) {
+    const isValidGmail = email.length >= 4 && email.endsWith('@gmail.com');
+    
+    if (isValidGmail) {
       defaultButton.style.display = 'none';
       primaryButton.style.display = 'block';
     } else {
